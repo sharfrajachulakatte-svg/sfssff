@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANANTHOSTAV 2K26 - Event Registration</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('ananthostav.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(6px);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 5px;
+            color: #1a4d2e;
+        }
+        
+        .form-container .subtitle {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555555;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1a4d2e;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #1a4d2e;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #143d24;
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>ANANTHOSTAV 2K26</h2>
+        <p class="subtitle">The Grand Annual Festival of ALTS</p>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="studentName">Name of the Student</label>
+                <input type="text" id="studentName" name="studentName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="rollNumber">Roll Number</label>
+                <input type="text" id="rollNumber" name="rollNumber" placeholder="Enter your college roll number" required>
+            </div>
+            <div class="form-group">
+                <label for="branch">Branch</label>
+                <select id="branch" name="branch" required>
+                    <option value="" disabled selected>Select your branch</option>
+                    <option value="Computer Science">Computer Science (CSE)</option>
+                    <option value="CSE-AIML">CSE-AIML (CSM)</option>
+                    <option value="CSE-DS">CSE-DS (CSD)</option>
+                    <option value="Electronics">Electronics (ECE)</option>
+                    <option value="Electrical">Electrical (EEE)</option>
+                    <option value="Mechanical">Mechanical (ME)</option>
+                    <option value="Civil">Civil (CE)</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="section">Section</label>
+                <input type="text" id="section" name="section" placeholder="e.g., A, B, or C" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[6-9][0-9]{9}" title="Enter valid 10-digit number starting with 6-9" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" placeholder="Enter your college email id" required>
+            </div>
+            <button type="submit" class="submit-btn">Register Now</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            const name = document.getElementById("studentName").value;
+            const roll = document.getElementById("rollNumber").value;
+            const branch = document.getElementById("branch").value;
+            const section = document.getElementById("section").value;
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+
+            alert(
+                "Registration Successful for ANANTHOSTAV 2K26!\n\n" +
+                "Name: " + name + "\n" +
+                "Roll Number: " + roll + "\n" +
+                "Branch: " + branch + "\n" +
+                "Section: " + section + "\n" +
+                "Phone: " + phone + "\n" +
+                "Email: " + email
+            );
+            document.getElementById("registrationForm").reset();
+        });
+    </script>
+</body>
+</html>
